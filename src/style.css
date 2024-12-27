@@ -1,0 +1,110 @@
+:root {
+  --primary-color: #2c3e50;
+  --hover-color: #3498db;
+  --bg-gradient: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  --card-gradient: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: var(--bg-gradient);
+  font-family: 'Inter', sans-serif;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 2.5rem;
+}
+
+.nav-grid {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--card-gradient);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(225deg, #a8edea 0%, #fed6e3 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.nav-item:hover::before {
+  opacity: 0.1;
+}
+
+.nav-item:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.nav-item i, .nav-item span {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-item i {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-item span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-item.gradient-1 {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.nav-item.gradient-2 {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.nav-item.gradient-3 {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.nav-item.gradient-4 {
+  background: linear-gradient(135deg, #a6c0fe 0%, #f68084 100%);
+}
+
+.nav-item.gradient-5 {
+  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+}
